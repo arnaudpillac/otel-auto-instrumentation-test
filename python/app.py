@@ -16,12 +16,22 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
+def subdef():
+    print("foobar")
 
 @app.route("/server_request")
 def server_request():
     print(request.args.get("param"))
     return "served"
 
+@app.route("/error")
+def error():
+    return foobar
+
+@app.route("/spans")
+def spans():
+    x = subdef()
+    return x
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8082)
