@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: python-app
-          image: ghcr.io/arnaudio/python-hello:0.1
+          image: ghcr.io/arnaudpillac/otel-auto-instrumentation-test/python-hello:main
           ports:
             - containerPort: 5000
           resources: {}
+
